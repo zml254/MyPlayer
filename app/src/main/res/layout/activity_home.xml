@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/fragment_flame_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/activity_home_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="Home" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:id="@+id/activity_home_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#D4DCE1"
+        app:layout_constraintTop_toBottomOf="@id/fragment_flame_toolbar" />
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/activity_home_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/activity_home_view"
+        app:layout_constraintTop_toBottomOf="@id/activity_home_line"/>
+
+    <View
+        android:id="@+id/activity_home_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="60dp"
+        android:background="#D4DCE1"
+        app:layout_constraintBottom_toTopOf="@id/activity_home_bottom_tab" />
+
+    <ImageView
+        android:id="@+id/activity_home_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:src="@mipmap/play"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity_home_view"
+        app:layout_constraintBottom_toTopOf="@id/activity_home_bottom_tab" />
+
+    <TextView
+        android:id="@+id/activity_home_albumName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="30dp"
+        android:textSize="15dp"
+        android:text="Loading"
+        app:layout_constraintLeft_toRightOf="@id/activity_home_play"
+        app:layout_constraintBottom_toTopOf="@id/activity_home_bottom_tab" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/activity_home_bottom_tab"
+        app:layout_constraintTop_toBottomOf="@id/activity_home_albumName"
+        app:layout_constraintLeft_toLeftOf="@id/activity_home_albumName"
+        android:text="loading"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/dots"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity_home_view"
+        app:layout_constraintBottom_toTopOf="@id/activity_home_bottom_tab"
+        android:layout_marginEnd="20dp" />
+
+    <SeekBar
+        android:id="@+id/activity_home_seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        app:layout_constraintBottom_toTopOf="@id/activity_home_bottom_tab" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/activity_home_bottom_tab"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:fillViewport="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:tabIndicatorHeight="0dp"
+        app:tabMode="fixed" >
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@mipmap/flame" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@mipmap/library" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@mipmap/account" />
+    </com.google.android.material.tabs.TabLayout>
+
+
+    
+</androidx.constraintlayout.widget.ConstraintLayout>
